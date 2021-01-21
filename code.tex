@@ -1,0 +1,331 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphics}
+\usepackage{pbox}
+\usepackage[x11names]{xcolor}
+\definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+\definecolor{royalazure}{rgb}{0.0, 0.22, 0.66}
+\usepackage[colorlinks=true,linkcolor=royalazure]{hyperref}
+\usepackage{tikz, tkz-fct, pgfplots}
+\usetikzlibrary{arrows}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm
+} 
+\usepackage[labelsep=period]{caption}
+
+
+% ----------------- Commands ----------------- 
+\newcommand{\eps}{\varepsilon}
+\newcommand\tline[2]{$\underset{\text{#1}}{\text{\underline{\hspace{#2}}}}$}
+
+% ----------------- Set graphics path ----------------- 
+\graphicspath{{img/}}
+
+\begin{document}
+\pagestyle{empty}
+\centerline{\large Министерство науки и высшего образования}	
+\centerline{\large Федеральное государственное бюджетное образовательное}
+\centerline{\large учреждение высшего образования}
+\centerline{\large ``Московский государственный технический университет}
+\centerline{\large имени Н.Э. Баумана}
+\centerline{\large (национальный исследовательский университет)''}
+\centerline{\large (МГТУ им. Н.Э. Баумана)}
+\hrule
+\vspace{0.5cm}
+\begin{figure}[h]
+\center
+\includegraphics[height=0.35\linewidth]{bmstu-logo-small.png}
+\end{figure}
+\begin{center}
+	\large	
+	\begin{tabular}{c}
+		Факультет ``Фундаментальные науки'' \\
+		Кафедра ``Высшая математика''		
+	\end{tabular}
+\end{center}
+\vspace{0.5cm}
+\begin{center}
+	\LARGE \bf	
+	\begin{tabular}{c}
+		\textsc{Отчёт} \\
+		по учебной практике \\
+		за 3 семестр 2020---2021 гг.
+	\end{tabular}
+\end{center}
+\vspace{0.5cm}
+\begin{center}
+	\large
+	\begin{tabular}{p{5.3cm}ll}
+		\pbox{5.45cm}{
+			Руководитель практики,\\
+			ст. преп. кафедры ФН1} 	& \tline{\it(подпись)}{5cm} & Кравченко О.В. \\[0.5cm]
+		студент группы ФН1--31 		& \tline{\it(подпись)}{5cm} & Зиновенков М.В.
+	\end{tabular}
+\end{center}
+\vfill
+\begin{center}
+	\large	
+	\begin{tabular}{c}
+		Москва, \\
+		2020 г.
+	\end{tabular}
+\end{center}
+
+\newpage	
+\tableofcontents
+
+\newpage
+\section{Цели и задачи практики}	
+\subsection{Цели}
+--- развитие компетенций, способствующих успешному освоению материала бакалавриата и необходимых в будущей профессиональной деятельности.
+
+\subsection{Задачи}
+\begin{enumerate}
+\item Знакомство с теорией рядов Фурье, и теорией интегральный уравнений.
+\item Развитие умения поиска необходимой информации в специальной литературе и других источниках.
+\item Развитие навыков составления отчётов и презентации результатов.
+\end{enumerate}
+
+\subsection{Индивидуальное задание}	
+\begin{enumerate}
+\item Изучить способы отображения математической информации в системе вёртски \LaTeX.
+\item Изучить возможности  системы контроля версий \textsf{Git}.
+\item Научиться верстать математические тексты, содержащие формулы и графики в системе \LaTeX.
+Для этого, выполнить установку свободно распространяемого дистрибутива \textsf{TeXLive} и оболочки \textsf{TeXStudio}.
+\item Оформить в системе \LaTeX типовые расчёты по курсе математического анализа согласно своему варианту.
+\item Создать аккаунт на онлайн ресурсе \textsf{GitHub} и загрузить исходные \textsf{tex}--файлы 
+и результат компиляции в формате \textsf{pdf}.
+\item Решить индивидуальное домашнее задание согласно своему варианту, и оформить решение с учётов пп. 1---4.
+\end{enumerate} 
+
+\newpage
+\section{Отчёт}
+Интегральные уравнения имеют большое прикладное значение, являясь мощным
+орудием исследования многих задач естествознания и техники: они широко используются
+в механике, астрономии, физике, во многих задачах химии и биологии. Теория линейных
+интегральных уравнений представляет собой важный раздел современной математики,
+имеющий широкие приложения в теории дифференциальных уравнений, математической
+физике, в задачах естествознания и техники. Отсюда владение методами теории
+дифференциальных и интегральных уравнений необходимо приклажному математику, при решении задач
+механики и физики.
+
+\newpage
+\section{Индивидуальное задание}
+%\subsection{Элементарные функции и их графики.}
+%\input{src/part1.tex}
+
+%=================================================================================================================================
+\subsection{Ряды Фурье и интегральное уравнение Вольтерры.}
+
+
+
+% ---------------------------- Problem 1----------------------------------
+\subsubsection*{\center Задача № 1.}
+{\bf Условие.~}
+Разложить в ряд Фурье заданную функцию $f(x)$, построить графики $f(x)$ и суммы ее ряда Фурье. Если не указывается, какой вид разложения в ряд необходимо представить, то требуетчя разложить функцию либо в общий тригонометрический ряд Фурье, либо следует выбрать оптимальный вид разложения в зависимости от данной функции.
+
+\begin{center}
+$f(x)=\frac{x-\pi}{2}$, 	& $0 \leqslant x \leqslant \pi$, & по косинусам.
+\end{center}\\
+{\bf Решение.~}	
+%График
+\begin{center}
+\includegraphics[height=0.35\linewidth]{g1.png}
+\end{center}
+\noindent
+Построим общий тригонометрический ряд Фурье вида
+$$
+f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty 
+	\left(a_n\cos{(n\omega x)}\right),\quad\text{где }\,\omega=\frac{\pi}{T},\,T=\pi.
+$$
+\noindent
+Вычислим коэффициенты
+$$
+\begin{array}{rcl}
+a_0 &=& \displaystyle\frac{2}{\pi}\left
+\left(
+\int\limits_0^\pi
+\frac{x-\pi}{2}\,dx \right) 
+ = -\frac{\pi}{2},												\\[12pt]
+a_n &=& \displaystyle\frac{2}{\pi}\left(
+	-\int\limits_0^\pi
+	\frac{\pi}{2}\cos (nx)\,dx + \int\limits_0^\pi
+	\frac{x}{2}\cos (nx)\,dx \right) ={}									\\[12pt]
+	&=& \displaystyle \frac{2}{\pi}\left(
+	-\pi*\left.\frac{\sin(nx)}{2n} \right|_0^\pi
+	+\left.\frac{x\sin(nx)}{2 n} \right|_0^\pi 
+	+\left.\frac{\cos(nx)}{2 n^2} \right|_0^\pi\right) = 	\\[12pt]
+	&=& \displaystyle\frac{2}{\pi}(\frac{\cos(\pi n)}{2n^2}-(\frac{1}{2n^2})) \\[12pt]
+	&=& \displaystyle\frac{(-1)^n-1}{\pi n^2},	\\[12pt]
+\end{array}
+$$
+Применив теорему Дирихле о поточечной сходимости ряда Фурье, видим, что построенный ряд Фурье сходится 
+к периодическому (с периодом $T=\pi$) продолжению исходной функции при всех $x$.
+График функции $S(x)$ имеет следующий вид
+\begin{center}
+\includegraphics[height=0.35\linewidth]{g2.png}	
+\end{center}
+\noindent
+\textbf{Ответ:}
+\[
+\begin{split}
+f(x)=-\frac{\pi}{4}+\sum_{n=1}^\infty 
+	\left((\frac{(-1)^n-1}{\pi n^2}\cos{(n x)}\right)
+\end{split}
+\]
+
+
+
+
+% ---------------------------- Problem 2----------------------------------
+\subsubsection*{\center Задача № 2.}
+{\bf Условие.~}
+Для заданной графически функции $y(x)$ построить ряд Фурье в комплексной форме, изобразить график суммы построенного ряда
+
+%График
+\begin{center}
+	\begin{minipage}[t][7cm][c]{7cm}
+		\begin{tikzpicture}[
+		declare function={
+			func(\x)=
+			and(\x >= 0, \x <= 1.5708) * (1-cos(deg(\x))) + 
+			and(\x >  1.5708, \x <= 3) * 0.0;
+		}
+		]
+		\begin{axis}[
+		axis x line=middle, axis y line=middle,
+		axis equal,	
+		ymin=-1.1, ymax=1.1, ytick={-1,...,1}, ylabel=$y$,
+		xmin=-1.1, xmax=5, xtick={-1,1,1.5708,2,3.14159},
+		xticklabels={-1,1,$\dfrac{\pi}{2}$,2,$\pi$},
+		xlabel=$x$,
+		domain=0.0:pi,samples=600 % added		
+		]
+		
+		\addplot [domain=0:1.5708,black,line width=2pt] {1-cos(deg(\x))};
+		\addplot [domain=1.5708:pi,black,line width=2pt] {0.0};
+		\addplot [dashed, black] coordinates {(1.5708,0)(1.5708,1)};
+		\node[] at (axis cs: 1.00,1.25) {\small$1-\cos{x}$};							
+		\end{axis}
+		\end{tikzpicture}
+	\end{minipage} \\[1.5cm]
+\end{center}
+
+\noindent
+\textbf{Решение.}\\
+
+\noindent
+Ряд Фурье в комплексной форме имеет следующий вид
+\[
+f(x) = \sum_{n=-\infty}^\infty c_n e^{i\omega nx},\quad c_n=\frac{1}{T}\int\limits_a^b f(x) e^{-i\omega nx}dx,\,\omega=\frac{2\pi}{T}.
+\]
+В нашем примере $ a=0,b=3,T=\pi,\omega=2$, 
+найдем коэффицинеты $c_n,\,n=0,\pm1,\pm2,\ldots$
+где $\omega=2,\,T=\pi.$
+$$
+\begin{array}{rcl}
+c_0 &=&\displaystyle\frac{1}{\pi} \int\limits_0^\pi f(x)dx=\frac{a_0}{2}=\frac{\pi+2}{4\pi},\\[12pt]
+a_n &=&\displaystyle\frac{1}{\pi}\left(\frac{\sin(\frac{\pi n}{2})}{n} + \frac{\cos(\frac{\pi n}{2})}{n^2-1}\right),\\[12pt]
+b_n &=&\displaystyle\frac{1}{\pi}\left(\frac{1-\cos(\frac{\pi n}{2})}{n} + \frac{n - \sin(\frac{\pi n}{2})}{1-n^2}\right),\\[12pt]
+c_n &=&\displaystyle\frac{a_n - i b_n}{2} = {}\\[12pt]
+&=&\displaystyle\frac{1}{2\pi}\left(
+\frac{\sin(\frac{\pi n}{2})}{n} + \frac{\cos(\frac{\pi n}{2})}{n^2-1}
+- i \left(\frac{1 - cos(\frac{\pi n}{2})}{n} + \frac{n - \sin(\frac{\pi n}{2})}{1 - n^2}\right) \right)\\[12pt]
+\end{array}
+$$
+\noindent
+Применив теорему Дирихле о поточечной сходимости ряда Фурье, видим, что построенный ряд Фурье сходится 
+к периодическому (с периодом $T=\pi$) продолжению исходной функции при всех $x\ne \frac{\pi n}{2}$, и $S(\frac{\pi n}{2})=1/2$ при 
+$n=0,\pm1,\pm2,\ldots$, где $S(x)$ --- сумма ряда Фурье. График функции $S(x)$ имеет вид
+\begin{center}
+	\begin{tikzpicture}[
+		declare function={
+			func(\x)=
+			and(\x >= 0, \x <= 1.5708) * (1-cos(deg(\x))) + 
+			and(\x >  1.5708, \x <= 3) * 0.0;
+		}
+		]
+		\begin{axis}[
+		axis x line=middle, axis y line=middle,
+		axis equal,	
+		ymin=-1.1, ymax=1.1, ytick={-1,...,1}, ylabel=$y$,
+		xmin=-5, xmax=5, xtick={-3.14159,-2,-1.5708,-1,1,1.5708,2,3.14159},
+		xticklabels={$-\pi$,-2,$-\dfrac{\pi}{2}$,-1,1,$\dfrac{\pi}{2}$,2,$\pi$},
+		xlabel=$x$,
+		domain=0.0:pi,samples=600 % added		
+		]
+		
+		\addplot [domain=0:1.5708,black,line width=2pt] {1-cos(deg(\x))};
+		\addplot [domain=1.5708:pi,black,line width=2pt] {0.0};
+		\addplot [dashed, black] coordinates {(1.5708,0)(1.5708,1)};
+		
+		\addplot [domain=-1.5708:0,black,line width=2pt] {0.0};
+		\addplot [domain=-pi:-1.5708,black,line width=2pt] {1-cos(deg(\x+3.14))};
+		\addplot [dashed, black] coordinates {(-1.5708,0)(-1.5708,1)};
+		
+		\addplot[
+	mark=*,
+	mark options={fill=black, draw=black},
+	only marks,
+	] coordinates {(1.57, 0.5)(-1.57, 0.5)};
+	
+		\node[] at (axis cs: 1.00,1.25) {\small$1-\cos{x}$};						
+	\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+\noindent
+\textbf{Ответ:}
+\[
+\begin{split}
+&f(x)=\sum_{n=-\infty}^\infty\left[ \frac{1}{2\pi}\left(
+\frac{\sin(\frac{\pi n}{2})}{n} + \frac{\cos(\frac{\pi n}{2})}{n^2-1}
+- i \left(\frac{1 - cos(\frac{\pi n}{2})}{n} + \frac{n - \sin(\frac{\pi n}{2})}{1 - n^2}\right) \right) \right] e^{i2 nx},~ x\ne \frac{\pi n}{2}; \\
+&S(\frac{\pi n}{2})=\frac{1}{2},\quad\text{при}~n\in\mathbb{Z}.
+\end{split}
+\]
+
+
+% ---------------------------- Problem 3----------------------------------
+\subsubsection*{\center Задача № 3.}
+{\bf Условие.~}\\
+Найти резольвенту для интегрального уравнения Вольтерры со следующим ядром 
+$$K(x,t)=(t-x)7^{(\sin{t}-\sin{x})}, \lambda = 49.$$
+
+\noindent
+{\bf Решение.~}\\
+\noindent
+Из рекурентных соотношений $K_j(x,t)=\int\limits_t^x K(x,s)K_{j-1}(s,t)ds$ получаем
+$$
+\begin{array}{rcl}
+K_1(x,t)&=&\displaystyle (t-x)7^{(\sin{t}-\sin{x})}, \\[12pt]
+K_2(x,t)&=&\displaystyle\int\limits_t^x K(x,s)K_1(s,t)ds = \int\limits_t^x (s-x)7^{(\sin{s}-\sin{x})}
+(t-s)7^{(\sin{t}-\sin{s})} ds = {}\\[12pt]
+&=&\displaystyle 7^{(\sin{t}-\sin{x})}\cdot \frac{x^3-3x^2 t + 3xt^2 -t^3}{6} = 7^{(\sin{t}-\sin{x})}\cdot \frac{(x-t)^3}{6},\\[12pt]
+K_3(x,t)&=&\displaystyle\int\limits_t^x K(x,s)K_2(s,t)ds = \int\limits_t^x (s-x)7^{(\sin{s}-\sin{x})} 7^{(\sin{t}-\sin{s})}\cdot \frac{(s-t)^3}{6}  ds = {}\\[12pt]
+&=&\displaystyle 7^{(\sin{t}-\sin{x})}\cdot \frac{(t-x)^5}{120}.\\[12pt]
+K_j(x,t)&=&\displaystyle \frac{(t-x)^{j+2}\cdot (-1)^{j+1}\cdot 7^{\sin(t)-\sin(x)}}{(2j-1)!},\quad j=\mathbb{N}.
+\end{array}
+$$
+Подставляя это выражение для итерированных ядер, найдем резольвенту
+$$ 
+R(x,t,\lambda)=\sum_{j=1}^\infty \lambda^{j-1}K_j(x,t) = \sum_{j=1}^\infty 49^{j-1} \frac{(t-x)^{j+2}\cdot (-1)^{j+1} \cdot7^{\sin(t)-\sin(x)}}{(2j-1)!}
+\quad j=1,2,\ldots
+$$
+
+
+\newpage
+\addcontentsline{toc}{section}{Список литературы}
+\begin{thebibliography}{99}
+\bibitem{book01} Львовский С.М. Набор и вёрстка в системе \LaTeX,\,2003.
+\bibitem{book02} Краснов М.Л., Киселев А.И., Макаренко Г.И. Интегральные уравнения. М.:~Наука,\,1976.
+\bibitem{book03} Васильева А. Б., Тихонов Н. А. Интегральные уравнения. --- 2-е изд., стереотип. --- М:~ФИЗМАТЛИТ,\,2002.
+\end{thebibliography}
+
+\end{document}
