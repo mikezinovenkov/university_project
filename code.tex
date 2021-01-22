@@ -136,8 +136,30 @@ $f(x)=\frac{x-\pi}{2}$, 	& $0 \leqslant x \leqslant \pi$, & по косинус�
 {\bf Решение.~}	
 %График
 \begin{center}
-\includegraphics[height=0.35\linewidth]{g1.png}
-\end{center}
+\begin{minipage}[t][7cm][c]{7cm}
+		\begin{tikzpicture}[
+		declare function={
+			func(\x)=
+			and(\x >= 0, \x <= 1.5708) * 0.63662 * (1.5708 - \x) + 
+			and(\x >  1.5708, \x <= 3.1416) * 0.63662 * (\x - 1.5708);
+		}
+		]
+		\begin{axis}[
+		axis x line=middle, axis y line=middle,
+		axis equal,	
+		ymin=-1.1, ymax=1.1, ytick={-1.5708,-1,1,1.5708}, ylabel=$y$,
+		xmin=-1.1, xmax=5, xtick={-1,1,1.5708,2,3.14159},
+		xticklabels={-1,1,$\dfrac{\pi}{2}$,2,$\pi$},
+		yticklabels={$-\dfrac{\pi}{2}$,-1,1,$\dfrac{\pi}{2}$},
+		xlabel=$x$,
+		domain=0.0:pi-0.01,samples=600 % added		
+		]
+		
+		\addplot [domain=0:3.14, black,line width=2pt] {(\x/2 - 1.5708)};
+		\end{axis}
+		\end{tikzpicture}
+	\end{minipage} \\
+	\end{center}
 \noindent
 Построим общий тригонометрический ряд Фурье вида
 $$
@@ -169,8 +191,35 @@ $$
 к периодическому (с периодом $T=\pi$) продолжению исходной функции при всех $x$.
 График функции $S(x)$ имеет следующий вид
 \begin{center}
-\includegraphics[height=0.35\linewidth]{g2.png}	
-\end{center}
+\begin{minipage}[t][7cm][c]{7cm}
+		\begin{tikzpicture}[
+		declare function={
+			func(\x)=
+			and(\x >= 0, \x <= 1.5708) * 0.63662 * (1.5708 - \x) + 
+			and(\x >  1.5708, \x <= 3.1416) * 0.63662 * (\x - 1.5708);
+		}
+		]
+		\begin{axis}[
+		axis x line=middle, axis y line=middle,
+		axis equal,	
+		ymin=-1.1, ymax=1.1, ytick={-1.5708,-1,1,1.5708}, ylabel=$y$,
+		xmin=-5.5, xmax=5.5, xtick={-3.14159,-2,-1.5708,-1,1,1.5708,2,3.14159},
+		xticklabels={$-\pi$,-2,$-\dfrac{\pi}{2}$,-1,1,$\dfrac{\pi}{2}$,2,$\pi$},
+		yticklabels={$-\dfrac{\pi}{2}$,-1,1,$\dfrac{\pi}{2}$},
+		xlabel=$x$,
+		domain=0.0:pi-0.01,samples=600 % added		
+		]
+		
+		\addplot [domain=0:3.14, black,line width=2pt] {(\x/2 - 1.5708)};
+		\addplot [domain=-3.14:0, black,line width=2pt] {(-\x/2 - 1.5708)};
+		
+		\addplot [domain=-6.28:-3.14, black,line width=2pt] {(\x/2 + 1.5708)};
+		\addplot [domain=3.14:6.28, black,line width=2pt] {(-\x/2 + 1.5708)};
+		
+		\end{axis}
+		\end{tikzpicture}
+	\end{minipage} \\
+	\end{center}
 \noindent
 \textbf{Ответ:}
 \[
